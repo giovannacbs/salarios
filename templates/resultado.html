@@ -1,0 +1,14 @@
+<!-- resultado.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Resultado do Cálculo de Salários</title>
+</head>
+<body>
+    <h1>Média de Salários</h1>
+    {% for salario in salarios %}
+    <p>Sexo: {{ salario._id }}, Média Salário: {{ salario.media_salario | round(2) }}</p>
+    {% endfor %}
+</body>
+</html>

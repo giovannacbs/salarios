@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/resultado')
+@app.route('/resultado', methods=['POST'])
 def resultado():
     # Obtendo os valores do formulário
     faixa_etaria = request.form['faixa_etaria']
@@ -23,32 +23,25 @@ def resultado():
     hrs_trab = request.form['hrs_trab']
     ocup = request.form['ocup']
 
-    # Criando o filtro com base nas entradas
-    filtro = {
+    # Criando e aplicando o filtro
+    filtro = {k: v for k, v in {
         "faixa_etaria": faixa_etaria,
         "educ": educ,
         "regiao": regiao,
         "raca": raca,
         "hrs_trab": hrs_trab,
         "ocup": ocup
-    }
+    }.items() if v}
 
-    # Removendo entradas vazias do filtro
-    filtro = {k: v for k, v in filtro.items() if v}
-
-    # Agora, realizamos a consulta ao MongoDB
-    resultado = pnad.aggregate([
+    # Consulta ao MongoDB
+    medias = pnad.aggregate([
         {"$match": filtro},
         {"$group": {"_id": "$sexo", "media_salario": {"$avg": "$salario"}}}
     ])
 
-    # Preparando a resposta
-    salarios = list(resultado)
-    resposta = "Média de Salários:<br>"
-    for salario in salarios:
-        resposta += f"Sexo: {salario['_id']}, Média Salário: {salario['media_salario']}<br>"
-
-    return resposta
+    # Passando os resultados para o template
+    salarios = list(medias)
+    return render_template('resultado.html', salarios=salarios)
 
 if __name__ == '__main__':
     app.run(debug=True)
