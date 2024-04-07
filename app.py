@@ -42,6 +42,8 @@ def resultado():
 
     # Passando os resultados para o template
     salarios = list(medias)
+
+    print(salarios)
     return render_template('resultado.html', salarios=salarios)
 
 if __name__ == '__main__':
