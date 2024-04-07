@@ -1,0 +1,44 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FCCDE2; /* Fundo rosa claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.header {
+    font-family: 'Brush Script MT', cursive; /* Estilo de fonte do cabeçalho */
+    color: #000;
+    font-size: 2em;
+    margin: 20px 0;
+}
+.categories {
+    list-style: none;
+    padding: 0;
+}
+.category {
+    margin-bottom: 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.category:hover .dropdown-content {
+    display: block;
+}
+.button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}

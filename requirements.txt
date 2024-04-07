@@ -1,4 +1,9 @@
-Flask
-gunicorn
-requests
-bs4
+Flask==3.0.0
+pymongo
+python-dotenv
+langchain
+langchain-community
+langchain-openai
+pypdf
+openai 
+tiktoken
