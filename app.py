@@ -15,6 +15,7 @@ def index():
 
 @app.route('/resultado', methods=['POST'])
 def resultado():
+    print(request.form)
     # Obtendo os valores do formulário
     faixa_etaria = request.form['faixa_etaria']
     educ = request.form['educ']
