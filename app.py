@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request
 import pymongo
-from dotenv import load_dotenv, find_dotenv 
 import os
-load_dotenv(find_dotenv())
+
 
 app = Flask(__name__)
 
