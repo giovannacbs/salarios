@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<form action="resultado.html">
+<form action="/calc_salario" method="post">
     <select id="faixa_etaria" onchange="verificarSelecoes()">
         <option value="">Selecione a faixa etária:</option>
         <option value="15-25">15 a 25 anos de idade</option>
@@ -107,7 +107,9 @@
         <option value="95">Trabalhadores ambulantes dos serviços e afins</option>
         <option value="96">Coletores de lixo e outras ocupações elementares</option>
     </select>    
-    <button type="submit" id="submeter" disabled>Enviar</button>
+    <p>
+        <button type="submit" id="submeter" disabled>Enviar</button>
+    </p>
 </form>
 
 </body>
