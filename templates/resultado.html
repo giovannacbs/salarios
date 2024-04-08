@@ -1,12 +1,14 @@
 <!-- resultado.html -->
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
-    <meta charset="utf-8">
-    <title>Resultado do Cálculo de Salários</title>
+    <meta charset="UTF-8">
+    <title>Resultado do Salário</title>
 </head>
 <body>
-    <h1>Média de Salários: salarios
-    </h1>
+    <h2>Resultado do Salário</h2>
+    <p>Seu salário estimado caso mulher é: R$ {{ salario_mulher|round(2) }}</p>
+    <p>Seu salário estimado caso homem é: R$ {{ salario_homem|round(2) }}</p>
+    <a href="/">Voltar</a>
 </body>
 </html>
