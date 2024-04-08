@@ -7,15 +7,14 @@
     <script>
         function verificarSelecoes() {
             // Pega as entradas 
-            var faixaEtaria = document.getElementById('faixa_etaria').value;
+            var idade = document.getElementById('idade').value;
             var educ = document.getElementById('educ').value;
             var regiao = document.getElementById('regiao').value;
             var raca = document.getElementById('raca').value;
             var hrsTrab = document.getElementById('hrs_trab').value;
-            var ocup = document.getElementById('ocup').value;
 
             // Verifica se todas as seleções foram feitas
-            var todasSelecionadas = faixaEtaria && educ && regiao && raca && hrsTrab && ocup;
+            var todasSelecionadas = idade && educ && regiao && raca && hrsTrab;
 
             // Habilita ou desabilita o botão de submeter
             document.getElementById('submeter').disabled = !todasSelecionadas;
@@ -26,7 +25,7 @@
 <body>
 
 <form action="/resultado" method="post">
-    <select id="faixa_etaria" name="faixa_etaria" onchange="verificarSelecoes()">
+    <select id="idade" name="idade" onchange="verificarSelecoes()">
         <option value="">Selecione a faixa etária:</option>
         <option value="15-25">15 a 25 anos de idade</option>
         <option value="26-35">26 a 35 anos de idade</option>
@@ -65,52 +64,11 @@
         <option value="Horas extras">Horas extras (entre 54 e 79 horas semanais)</option>
         <option value="Trabalho extremo">Trabalho extremo (mais de 80 horas semanais)</option>
     </select>
-    <select id="ocup" name="ocup" onchange="verificarSelecoes()">
-        <option value="">Selecione a ocupação:</option>
-        <option value="11">Oficiais das forças armadas</option>
-        <option value="12">Dirigentes administrativos e comerciais</option>
-        <option value="13">Dirigentes e gerentes de produção e operação</option>
-        <option value="14">Gerentes de hotéis, restaurantes, comércios e outros serviços</option>
-        <option value="21">Graduados e praças das forças armadas</option>
-        <option value="22">Profissionais da saúde</option>
-        <option value="23">Profissionais do ensino</option>
-        <option value="24">Especialistas em organização da administração pública e de empresas</option>
-        <option value="25">Profissionais de tecnologias da informação e comunicações</option>
-        <option value="26">Profissionais em direito, em ciências sociais e culturais</option>
-        <option value="31">Profissionais de nível médio das ciências e da engenharia</option>
-        <option value="32">Profissionais de nível médio da saúde e afins</option>
-        <option value="33">Profissionais de nível médio em operações financeiras e administrativas</option>
-        <option value="34">Profissionais de nível médio de serviços jurídicos, sociais, culturais e afins</option>
-        <option value="35">Técnicos de nível médio da tecnologia da informação e das comunicações</option>
-        <option value="41">Policiais militares</option>
-        <option value="42">Trabalhadores de atendimento direto ao público</option>
-        <option value="43">Trabalhadores de cálculos numéricos e encarregados do registro de materiais</option>
-        <option value="44">Outros trabalhadores de apoio administrativo</option>
-        <option value="51">Bombeiros militares</option>
-        <option value="52">Vendedores</option>
-        <option value="53">Trabalhadores dos cuidados pessoais</option>
-        <option value="54">Trabalhadores dos serviços de proteção e segurança</option>
-        <option value="61">Agricultores e trabalhadores qualificados da agropecuária</option>
-        <option value="62">Trabalhadores florestais qualificados, pescadores e caçadores</option>
-        <option value="71">Trabalhadores qualificados e operários da construção exclusive eletricistas</option>
-        <option value="72">Trabalhadores qualificados e operários da metalurgia, da construção mecânica e afins</option>
-        <option value="73">Artesãos e operários das artes gráficas</option>
-        <option value="74">Trabalhadores especializados em eletricidade e eletrônica</option>
-        <option value="75">Operários e oficiais de processamento de alimentos, da madeira, da confecção e afins</option>
-        <option value="81">Operadores de instalações fixas e máquinas</option>
-        <option value="82">Montadores</option>
-        <option value="83">Condutores de veículos e operadores de equipamentos móveis pesados</option>
-        <option value="91">Trabalhadores domésticos e outros trabalhadores de limpeza de interior de edifícios</option>
-        <option value="92">Trabalhadores elementares da agropecuária, da pesca e florestais</option>
-        <option value="93">Trabalhadores elementares da mineração, da construção, da indústria de transformação e do transporte</option>
-        <option value="94">Ajudantes de preparação de alimentos</option>
-        <option value="95">Trabalhadores ambulantes dos serviços e afins</option>
-        <option value="96">Coletores de lixo e outras ocupações elementares</option>
-    </select>    
+    <input type="number" id="hrs_trab" name="hrs_trab" min="25" max="80" value="25" readonly onchange="verificarSelecoes()">
     <p>
         <button type="submit" id="submeter" disabled>Enviar</button>
     </p>
 </form>
-
+<script src="script.js"></script>
 </body>
 </html>
