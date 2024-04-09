@@ -1,36 +1,51 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Calcular Salário</title>
+    <title>Girls just wanna have equal pay</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h2>Informe seus dados</h2>
-    <form action="/" method="post">
-        Idade: <input type="number" name="idade" min="15" max="65" required><br>
-        Região:
-        <select name="regiao" required>
-            <option value="Centro-Oeste">Centro-Oeste</option>
-            <option value="Nordeste">Nordeste</option>
-            <option value="Norte">Norte</option>
-            <option value="Sul">Sul</option>
-            <option value="Sudeste">Sudeste</option>
-        </select><br>
-        Educação:
-        <select name="educ" required>
-            <option value="Ensino Fundamental">Ensino Fundamental</option>
-            <option value="Ensino Médio">Ensino Médio</option>
-            <option value="Ensino Superior">Ensino Superior</option>
-            <option value="Especialização de nível superior">Especialização de nível superior</option>
-        </select><br>
-        Raça: 
-        <select name="raca" required>
-            <option value="branca">Branca</option>
-            <option value="nao branca">Não Branca</option>
-        </select><br>
-        Horas trabalhadas por semana: <input type="number" name="hrs_trab" min="25" max="80" required><br>
-        <input type="submit" value="Calcular Salário">
-    </form>
+    <div class="content-wrapper">
+        <form action="/" method="post" class="form-container">
+            <div class="form-group">
+                <label for="idade" class="form-label">Idade</label>
+                <input type="number" name="idade" id="idade" class="form-input" min="15" max="65" required>
+            </div>
+            <div class="form-group">
+                <label for="regiao" class="form-label">Região</label>
+                <select name="regiao" id="regiao" class="form-select" required>
+                    <option value="Centro-Oeste">Centro-Oeste</option>
+                    <option value="Nordeste">Nordeste</option>
+                    <option value="Norte">Norte</option>
+                    <option value="Sul">Sul</option>
+                    <option value="Sudeste">Sudeste</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="educ" class="form-label">Nível mais alto de educação</label>
+                <select name="educ" id="educ" class="form-select" required>
+                    <option value="Ensino Fundamental">Ensino Fundamental</option>
+                    <option value="Ensino Médio">Ensino Médio</option>
+                    <option value="Ensino Superior">Ensino Superior</option>
+                    <option value="Especialização de nível superior">Especialização de nível superior</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="raca" class="form-label">Raça</label>
+                <select name="raca" id="raca" class="form-select" required>
+                    <option value="branca">Branca</option>
+                    <option value="nao branca">Não Branca</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hrs_trab" class="form-label">Horas trabalhadas por semana</label>
+                <input type="number" name="hrs_trab" id="hrs_trab" class="form-input" min="25" max="80" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Calcular Salário" class="form-submit">
+            </div>
+        </form>
+    </div>
 </body>
 </html>

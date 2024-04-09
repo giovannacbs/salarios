@@ -1,44 +1,107 @@
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #FCCDE2; /* Fundo rosa claro */
+@import url('https://fonts.googleapis.com/css2?family=WindSong&family=Pixelify+Sans:wght@400..700&display=swap');
+
+body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Roboto', sans-serifß;
+    background-image: url('fundo.png'); /* Define a imagem de fundo */
+    background-position: center center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Previne a repetição da imagem */
+    background-attachment: fixed; /* (Opcional) Mantém a imagem fixa durante o scroll */
+    background-size: cover; /* Faz a imagem cobrir todo o espaço disponível, mantendo suas proporções */
+    width: 100vw;
     height: 100vh;
+    position: relative; /* Permite que o conteúdo seja adicionado sobre o fundo se necessário */
 }
-.header {
-    font-family: 'Brush Script MT', cursive; /* Estilo de fonte do cabeçalho */
-    color: #000;
-    font-size: 2em;
-    margin: 20px 0;
-}
-.categories {
-    list-style: none;
-    padding: 0;
-}
-.category {
-    margin-bottom: 10px;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.category:hover .dropdown-content {
-    display: block;
-}
-.button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
+
+.content-wrapper {
+    position: relative;
     text-align: center;
+    padding-top: 300px; /* Espaço no topo */
 }
+
+/* Estilo dos retângulos dos nomes dos forms */
+.form-label {
+    font-family: "Oxanium", monospace;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 100;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+/* Posicionamento específico para cada nome do form */
+#idade-label { top: 280px; left: 50px; }
+#regiao-label { top: 230px; left: 50px; }
+#educ-label { top: 180px; right: 50px; }
+#raca-label { top: 230px; right: 50px; }
+#hrs_trab-label { top: 280px; left: 50%; transform: translateX(-50%); }
+
+
+/* Estilo dos inputs */
+.form-input, .form-select{
+    margin-bottom: 15px;
+    border: 2px solid #D2D2D2;
+    width: fit-content;
+    border-color: #D2D2D2;
+    border-radius: 300px;
+    padding: 10px 30px;
+    font-family: "Oxanium", monospace;
+    appearance: none 
+}
+
+/* Posicionamento específico para cada input */
+#idade { top: 400px; left: 250px; }
+#regiao { top: 400px; left: 250px; }
+#educ { top: 400px; right: 250px; }
+#raca { top: 4000px; right: 250px; }
+#hrs_trab { top: 2400px; width: 20px; }
+
+.form-submit  {
+    font-family: "Oxanium", monospace;
+    text-transform: uppercase;
+    margin-top: 56px;
+    width: fit-content;
+    display: inline-block;
+    background-color: #efb7ce;
+    color: #FFF;
+    font-weight: 1000;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    padding: 15px 190px;  
+    text-align: center;      
+}
+
+.form-submit:hover{
+    background-color: #0000;
+    color: #efb7ce;
+    cursor: pointer;
+    
+}
+
+/* Resposta ao estado de foco para melhor acessibilidade */
+.form-input:focus, .form-select:focus, .form-submit:focus {
+    outline: 3px solid #000; /* Cor de destaque para foco, ajuste conforme necessário */
+}
+
+/* Responsividade e ajustes para telas menores */
+@media (max-width: 768px) {
+    .form-name, .form-input, .form-select, .form-submit {
+        position: static;
+        margin: 10px auto;
+        display: block;
+        width: 80%; /* Torna os elementos de formulário mais largos em telas menores */
+    }
+
+    .title-main {
+        font-size: 36px;
+    }
+
+    .title-sub {
+        font-size: 60px;
+    }
+}
+
