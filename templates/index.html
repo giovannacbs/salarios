@@ -7,6 +7,16 @@
 </head>
 <body>
     <div class="content-wrapper">
+        <div class="main-column">
+            <img class="imagem_home" src="https://raw.githubusercontent.com/giovannacbs/salarios/main/static/ResourceBlog-Graphic-5.png">
+            <div class="home-text"> 
+                 <text id="sera">
+                    Será que mulher <br>
+                    ganha menos mesmo?
+                 </text>
+                <h2 id="entre">Entre as variáveis idade, raça/cor, nível máximo de educação, região que reside e horas trabalhadas semanais e confira a estimativa do salário médio para homens e mulheres.</h2>
+            </div>
+        </div>
         <form action="/" method="post" class="form-container">
             <div class="form-group">
                 <label for="idade" class="form-label">Idade</label>
@@ -15,6 +25,7 @@
             <div class="form-group">
                 <label for="regiao" class="form-label">Região</label>
                 <select name="regiao" id="regiao" class="form-select" required>
+                    <option value="elect">Selecionar região...</option>
                     <option value="Centro-Oeste">Centro-Oeste</option>
                     <option value="Nordeste">Nordeste</option>
                     <option value="Norte">Norte</option>
@@ -25,6 +36,7 @@
             <div class="form-group">
                 <label for="educ" class="form-label">Nível mais alto de educação</label>
                 <select name="educ" id="educ" class="form-select" required>
+                    <option value="elect">Selecionar educação...</option>
                     <option value="Ensino Fundamental">Ensino Fundamental</option>
                     <option value="Ensino Médio">Ensino Médio</option>
                     <option value="Ensino Superior">Ensino Superior</option>
@@ -32,8 +44,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="raca" class="form-label">Raça</label>
+                <label for="raca" class="form-label">Raça/Cor</label>
                 <select name="raca" id="raca" class="form-select" required>
+                    <option value="elect">Selecionar raça/cor...</option>
                     <option value="branca">Branca</option>
                     <option value="nao branca">Não Branca</option>
                 </select>
@@ -49,3 +62,4 @@
     </div>
 </body>
 </html>
+
