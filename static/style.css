@@ -145,14 +145,31 @@ a#saiba_mais {
 }
 
 /* Inicio página resultados */
-.resultados {
+.resultados, .graficos {
     font-family: "Abril Fatface", serif;
     color: #2d326e;
     font-size: 1.9rem;
 }
 
+.horizontal {
+    font-family: "Abril Fatface", serif;
+    color: #2d326e;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
+}
 
+.graf_h {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    flex-wrap: nowrap;
+}
 
+.titulo_graf_h {
+    display: flex;
+    flex-direction: row;
+    align-content: top;
+}
 
 
 
