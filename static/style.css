@@ -156,6 +156,8 @@ a#saiba_mais {
     color: #2d326e;
     margin-block-start: 0.2rem;
     margin-block-end: 0.2rem;
+    padding: 2%;
+    padding-top: 0;
 }
 
 .graf_h {
@@ -163,15 +165,58 @@ a#saiba_mais {
     flex-direction: row;
     align-items: end;
     flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 
 .titulo_graf_h {
     display: flex;
     flex-direction: row;
     align-content: top;
+    justify-content: space-evenly;
 }
 
+#e {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    position: relative;
+}
 
+#r {margin-top: 0;
+margin-bottom: 0;
+margin-block-start: 0;
+margin-block-end: 0;
+position: relative;
+}
+
+#u {margin-top: 0;
+    margin-bottom: 2%;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    position: relative;
+}
+
+.graf3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+.footer {
+
+    display: block;
+    width: 30%;
+    font-family: "Abril Fatface", serif;
+    color: #2d326e;
+    font-size: 1rem;
+    margin-block-end: 2%;
+}
+
+.result{
+    padding: 2%;
+}
 
 @media (max-width: 768px) {
     .form-group {
