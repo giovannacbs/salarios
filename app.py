@@ -111,6 +111,11 @@ def resultado():
 
     salario_estimado_homem = calcular_salario_homem(idade, regiao, educacao, raca, horas_trabalhadas)
     salario_estimado_mulher = calcular_salario_mulher(idade, regiao, educacao, raca, horas_trabalhadas)
+
+
+    salario_estimado_mulher = f"{float(salario_estimado_mulher):,.2f}".replace(",", "TEMP").replace(".", ",").replace("TEMP", ".")
+    salario_estimado_homem = f"{float(salario_estimado_homem):,.2f}".replace(",", "TEMP").replace(".", ",").replace("TEMP", ".")
+
     return render_template('resultado.html', salario_homem=salario_estimado_homem, salario_mulher=salario_estimado_mulher)
 
 if __name__ == '__main__':
