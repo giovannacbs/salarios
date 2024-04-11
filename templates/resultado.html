@@ -4,11 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultado do Salário</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
+<header class="header">
+    <text id="titulo">
+    Desigualdade Salarial Entre Gêneros
+    </text>
+    <a href=https://github.com/giovannacbs/salarios/ id="saiba_mais">
+        Saiba mais sobre o projeto
+    </a>
+</header>
 <body>
-    <h2>Resultado do Salário</h2>
-    <p>Seu salário estimado caso mulher é: R$ {{ salario_mulher|round(2) }}</p>
-    <p>Seu salário estimado caso homem é: R$ {{ salario_homem|round(2) }}</p>
+    <div class="resultados">
+        <p>Seu salário estimado caso mulher é: R$ {{ salario_mulher|round(2) }}</p>
+        <p>Seu salário estimado caso homem é: R$ {{ salario_homem|round(2) }}</p>
+    </div>
     <a href="/">Voltar</a>
 </body>
 </html>

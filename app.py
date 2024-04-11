@@ -97,21 +97,21 @@ def calcular_salario_mulher(idade, regiao, educacao, raca, horas_trabalhadas):
     
     return salario_mulher
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    if request.method == 'POST':
-        idade = request.form['idade']
-        educacao = request.form['educ']
-        regiao = request.form['regiao']
-        raca = request.form['raca']
-        horas_trabalhadas = request.form['hrs_trab']
-        
-        salario_estimado_homem = calcular_salario_homem(idade, regiao, educacao, raca, horas_trabalhadas)
-        salario_estimado_mulher = calcular_salario_mulher(idade, regiao, educacao, raca, horas_trabalhadas)
-        
-        return render_template('resultado.html', salario_homem=salario_estimado_homem, salario_mulher=salario_estimado_mulher)
-    
     return render_template('index.html')
+
+@app.route('/resultado.html', methods=["GET"])
+def resultado():
+    idade = request.args.get('idade')
+    educacao = request.args.get('educ')
+    regiao = request.args.get('regiao')
+    raca = request.args.get('raca')
+    horas_trabalhadas = request.args.get('hrs_trab')
+
+    salario_estimado_homem = calcular_salario_homem(idade, regiao, educacao, raca, horas_trabalhadas)
+    salario_estimado_mulher = calcular_salario_mulher(idade, regiao, educacao, raca, horas_trabalhadas)
+    return render_template('resultado.html', salario_homem=salario_estimado_homem, salario_mulher=salario_estimado_mulher)
 
 if __name__ == '__main__':
     app.run(debug=True)
