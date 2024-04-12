@@ -116,11 +116,19 @@ def resultado():
     salario_estimado_mulher_txt = f"{float(salario_estimado_mulher):,.2f}".replace(",", "TEMP").replace(".", ",").replace("TEMP", ".")
     salario_estimado_homem_txt = f"{float(salario_estimado_homem):,.2f}".replace(",", "TEMP").replace(".", ",").replace("TEMP", ".")
 
+    if raca == "Branca":
+        raca_txt = "branca"
+    else:
+        raca_txt = "não branca"
+
+    dados_usuario = f"{idade} anos, de raça {raca_txt}, com estudo até {educacao}, na região {regiao}, trabalhando por {horas_trabalhadas} horas."
+    
     return render_template('resultado.html', 
                            salario_homem=salario_estimado_homem, 
                            salario_mulher=salario_estimado_mulher, 
                            texto_homem=salario_estimado_homem_txt, 
-                           texto_mulher=salario_estimado_mulher_txt)
+                           texto_mulher=salario_estimado_mulher_txt,
+                           dados_usuario = dados_usuario)
 
 if __name__ == '__main__':
     app.run(debug=True)

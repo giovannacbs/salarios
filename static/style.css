@@ -17,8 +17,10 @@ body, html {
 }
 
 #titulo {
+    font-family: "Abril Fatface", serif;
     font-size: x-large;
     padding-left: 1%;
+    color: #e0e6ff;
 }
 
 a#saiba_mais {
@@ -137,6 +139,7 @@ a#saiba_mais {
     cursor: pointer;
     width: 100%;
     font-size: 1.3rem;
+    text-align: center;
 }
 
 .form-submit:hover {
@@ -144,8 +147,17 @@ a#saiba_mais {
     color: #2d326e;
 }
 
-/* Inicio página resultados */
-.resultados, .graficos {
+/* Página dados */
+.resultados {
+    font-family: "Abril Fatface", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.9rem;
+    color: #2d326e;
+}
+
+.graficos {
     font-family: "Abril Fatface", serif;
     color: #2d326e;
     font-size: 1.9rem;
@@ -157,7 +169,7 @@ a#saiba_mais {
     margin-block-start: 0.2rem;
     margin-block-end: 0.2rem;
     padding: 2%;
-    padding-top: 0;
+    padding-top: 1%;
 }
 
 .graf_h {
@@ -205,17 +217,51 @@ position: relative;
 }
 
 .footer {
-
-    display: block;
-    width: 30%;
     font-family: "Abril Fatface", serif;
     color: #2d326e;
     font-size: 1rem;
     margin-block-end: 2%;
+    padding: 4%;
+    padding-bottom:1% ;
+    max-width: 60%;
 }
 
 .result{
+    display: flex;
     padding: 2%;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+p {
+    border: 0;
+    margin: 0;
+}
+
+#sal_hom {
+    padding: 0%;
+    color: #4f69e1;
+}
+
+#sal_mul {
+    padding: 0%;
+    color: #8B98F3;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 8px;
+    font-family: "Oxanium", monospace; 
+    font-size: 12px; 
+    background: rgba(255, 255, 255, 0.8); 
+    border: 1px solid #2d326e; 
+    border-radius: 8px;
+    pointer-events: none; 
+    color: #2d326e; 
+    opacity: 0; 
 }
 
 @media (max-width: 768px) {
