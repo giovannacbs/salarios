@@ -6,26 +6,23 @@ app = Flask(__name__)
 def calcular_salario_homem(idade, regiao, educacao, raca, horas_trabalhadas):
     # Calcula o salário médio com base nos coeficientes obtidos rodando apenas dados para homens
     coef = {
-        'intercept': 5.685811,
-        'idade': 0.045034,
-        'horas_trabalhadas': 0.019579,
-        'raca_nao_branca': -0.145173,
-        'regiao_Centro-Oeste': 0.140094,
-        'regiao_Nordeste': -0.418006,
-        'regiao_Norte': -0.206334,
-        'regiao_Sul': 0.102244,
-        'educ_Ensino Médio': 0.227011,
-        'educ_Ensino Superior': 0.814948,
-        'educ_Especialização de nível superior, mestrado, doutorado': 1.387907,
-        'idade2': -0.000451
-    }
-    
+    'intercept': 2.887422,
+    'idade': 0.011503,
+    'raca_nao_branca': -0.113520,
+    'regiao_Centro-Oeste': 0.138047,
+    'regiao_Nordeste': -0.352450,
+    'regiao_Norte': -0.165508,
+    'regiao_Sul': 0.112369,
+    'educ_Ensino Fundamental': 0.344153,
+    'educ_Ensino Médio': 0.657032,
+    'educ_Ensino Superior': 1.264284,
+    'educ_Especialização de nível superior, mestrado, doutorado': 1.842134}
+
     idade = int(idade)
     horas_trabalhadas = int(horas_trabalhadas)
-    idade2 = idade ** 2
     
     log_salario = coef['intercept']
-    log_salario += coef['idade'] * idade + coef['idade2'] * idade2 + coef['horas_trabalhadas'] * horas_trabalhadas
+    log_salario += coef['idade'] * idade 
     
     if raca != 'branca':
         log_salario += coef['raca_nao_branca']
@@ -46,33 +43,32 @@ def calcular_salario_homem(idade, regiao, educacao, raca, horas_trabalhadas):
     elif educacao in ['Especialização de nível superior', 'mestrado', 'doutorado']:
         log_salario += coef['educ_Especialização de nível superior, mestrado, doutorado']
     
-    salario_homem = np.exp(log_salario)
+    salario_homem = (np.exp(log_salario))*horas_trabalhadas
     
     return salario_homem
 
 def calcular_salario_mulher(idade, regiao, educacao, raca, horas_trabalhadas):
     # Calcula o salário médio com base nos coeficientes obtidos rodando apenas dados para mulheres
+
     coef = {
-        'intercept': 5.759549,
-        'idade': 0.028889,
-        'horas_trabalhadas': 0.024785,
-        'raca_nao_branca': -0.163914,
-        'regiao_Centro-Oeste': 0.061350,
-        'regiao_Nordeste': -0.342485,
-        'regiao_Norte': -0.114828,
-        'regiao_Sul': 0.057751,
-        'educ_Ensino Médio': 0.084512,
-        'educ_Ensino Superior': 0.683671,
-        'educ_Especialização de nível superior, mestrado, doutorado': 1.186437,
-        'idade2': -0.000306
-    }
-    
+    'intercept': 2.862371,
+    'idade': 0.009029,
+    'raca_nao_branca': -0.117553,
+    'regiao_Centro-Oeste': 0.049813,
+    'regiao_Nordeste': -0.309326,
+    'regiao_Norte': -0.117362,
+    'regiao_Sul': 0.071118,
+    'educ_Ensino Fundamental': 0.288476,
+    'educ_Ensino Médio': 0.585126,
+    'educ_Ensino Superior': 1.173033,
+    'educ_Especialização de nível superior, mestrado, doutorado': 1.669707}
+
     idade = int(idade)
     horas_trabalhadas = int(horas_trabalhadas)
-    idade2 = idade ** 2
+    
     
     log_salario = coef['intercept']
-    log_salario += coef['idade'] * idade + coef['idade2'] * idade2 + coef['horas_trabalhadas'] * horas_trabalhadas
+    log_salario += coef['idade'] * idade 
     
     if raca != 'branca':
         log_salario += coef['raca_nao_branca']
@@ -93,7 +89,7 @@ def calcular_salario_mulher(idade, regiao, educacao, raca, horas_trabalhadas):
     elif educacao in ['Especialização de nível superior', 'mestrado', 'doutorado']:
         log_salario += coef['educ_Especialização de nível superior, mestrado, doutorado']
     
-    salario_mulher = np.exp(log_salario)
+    salario_mulher = (np.exp(log_salario))*horas_trabalhadas
     
     return salario_mulher
 
