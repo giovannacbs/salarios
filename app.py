@@ -123,12 +123,15 @@ def resultado():
 
     dados_usuario = f"{idade} anos, de raça {raca_txt}, com estudo até {educacao}, na região {regiao}, trabalhando por {horas_trabalhadas} horas."
     
+    percentual =  (salario_estimado_homem/salario_estimado_mulher)-1 
+
     return render_template('resultado.html', 
                            salario_homem=salario_estimado_homem, 
                            salario_mulher=salario_estimado_mulher, 
                            texto_homem=salario_estimado_homem_txt, 
                            texto_mulher=salario_estimado_mulher_txt,
-                           dados_usuario = dados_usuario)
+                           dados_usuario = dados_usuario,
+                           percentual = percentual)
 
 if __name__ == '__main__':
     app.run(debug=True)
