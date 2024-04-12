@@ -265,34 +265,88 @@ p {
 }
 
 @media (max-width: 768px) {
-    .form-group {
-        flex-direction: column;
-        align-items: flex-start; 
-        text-align: center;
-
+    /* Ajustes gerais */
+    body, html {
+        background-color: #FFFFFF; /* Cor de fundo mais clara */
+        font-size: 14px; /* Tamanho de fonte geral menor */
     }
-    
-    .form-label,
-    .form-input,
-    .form-select {
-        width: 100%; /* Labels e inputs ocupam a largura total em telas menores */
-        text-align: center;
-        margin-right: 0; /* Remover a margem direita em telas menores */
+
+    .header {
+        height: auto; /* Altura ajustável */
+        padding: 15px 5%; /* Mais espaço interno */
+    }
+
+    #titulo {
+        font-size: 1.5rem; /* Tamanho de fonte maior para legibilidade */
+        padding-left: 5%; /* Ajuste no padding */
+    }
+
+    a#saiba_mais {
+        font-size: 1rem; /* Tamanho de fonte ajustado para links */
+        padding-right: 5%; /* Ajuste no padding */
+    }
+
+    /* Ajustes para wrappers e layout principal */
+    .content-wrapper {
+        padding-top: 10px;
+        display: block; /* Empilhar ao invés de usar flex row */
+        text-align: center; /* Centralizar conteúdo */
+    }
+
+    .main-column, .forms {
+        width: 100%; /* Colunas para ocupar a largura total */
+        padding: 10px; /* Padding uniforme */
+    }
+
+    .imagem_home {
+        width: 100%; /* Ajustar largura da imagem para preencher */
+    }
+
+    .home-text, .resultados, .graficos {
+        text-align: center; /* Centralizar textos */
+    }
+
+    /* Ajustes para formatação de formulários e entradas */
+    .form-group {
+        flex-direction: column; /* Empilhar verticalmente */
+        align-items: center; /* Centralizar itens */
     }
 
     .form-label {
-        margin: 0 0 10px 0;
-        text-align: center;
-    }
-    
-    .form-input, .form-select, .form-submit {
-        width: 80%;
-        text-align: center;
+        width: 100%; /* Etiquetas para preencher a largura */
+        text-align: center; /* Texto centralizado */
+        margin-bottom: 5px; /* Espaço abaixo das etiquetas */
     }
 
-    .content-wrapper {
-        padding-top: 50px;
-        text-align: center;
+    .form-input, .form-select {
+        width: 100%; /* Entradas para preencher a largura */
+        margin-bottom: 10px; /* Espaço entre entradas */
+    }
+
+    .form-submit {
+        width: 90%; /* Botão mais estreito */
+        margin-top: 20px; /* Mais espaço acima do botão */
+        cursor: pointer; /* Cursor de ponteiro para indicar clicável */
+    }
+
+    .form-submit:hover {
+        background-color: #e0e6ff; /* Cor de fundo ao passar o mouse */
+        color: #2d326e; /* Cor do texto ao passar o mouse */
+    }
+
+    /* Ajustes para gráficos e rodapé */
+    .footer {
+        font-size: 0.8rem; /* Tamanho de fonte menor para o rodapé */
+        padding: 10px 5%; /* Padding ajustado */
+        max-width: 100%; /* Largura máxima ajustada */
+        text-align: center; /* Centralizar conteúdo */
+    }
+
+    .graficos, .resultados {
+        flex-direction: column; /* Colunas em forma de pilha */
+    }
+
+    .graf_h, .titulo_graf_h {
+        flex-direction: column; /* Ajustar direção dos gráficos e títulos */
     }
 }
-
