@@ -97,11 +97,15 @@ def calcular_salario_mulher(idade, regiao, educacao, raca, horas_trabalhadas):
 def index():
     return render_template('index.html')
 
-@app.route('/dados.html')
+@app.route('/en')
+def index_en():
+    return render_template('en.html')
+
+@app.route('/dados')
 def dados():
     return render_template('dados.html')
 
-@app.route('/resultado.html', methods=["GET"])
+@app.route('/resultado', methods=["GET"])
 def resultado():
     idade = request.args.get('idade')
     educacao = request.args.get('educ')
@@ -132,6 +136,39 @@ def resultado():
                            texto_mulher=salario_estimado_mulher_txt,
                            dados_usuario = dados_usuario,
                            percentual = percentual)
+
+@app.route('/resultado_en', methods=["GET"])
+def resultado_en():
+    idade = request.args.get('idade')
+    educacao = request.args.get('educ')
+    regiao = request.args.get('regiao')
+    raca = request.args.get('raca')
+    horas_trabalhadas = request.args.get('hrs_trab')
+
+    salario_estimado_homem = calcular_salario_homem(idade, regiao, educacao, raca, horas_trabalhadas)
+    salario_estimado_mulher = calcular_salario_mulher(idade, regiao, educacao, raca, horas_trabalhadas)
+
+
+    salario_estimado_mulher_txt = f"{float(salario_estimado_mulher):,.2f}"
+    salario_estimado_homem_txt = f"{float(salario_estimado_homem):,.2f}"
+
+    if raca == "Branca":
+        raca_txt = "branca"
+    else:
+        raca_txt = "não branca"
+
+    dados_usuario = f"{idade} anos, de raça {raca_txt}, com estudo até {educacao}, na região {regiao}, trabalhando por {horas_trabalhadas} horas."
+    
+    percentual =  ((salario_estimado_homem/salario_estimado_mulher)-1)*100
+
+    return render_template('resultado_en.html', 
+                           salario_homem=salario_estimado_homem, 
+                           salario_mulher=salario_estimado_mulher, 
+                           texto_homem=salario_estimado_homem_txt, 
+                           texto_mulher=salario_estimado_mulher_txt,
+                           dados_usuario = dados_usuario,
+                           percentual = percentual)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

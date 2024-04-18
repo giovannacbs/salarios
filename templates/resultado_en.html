@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Resultado</title>
+    <title>Result</title>
     <link rel="stylesheet" href="/static/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -15,12 +15,12 @@
                     duration: 2000,
                     easing: 'swing',
                     step: function (now) {
-                        $(this).text(parseFloat(now).toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                        $(this).text(parseFloat(now).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
                     }
                 });
             });
         });
-    </script>
+    </script>    
     <style>
         text, .axis text {
             font-family: "Oxanium", monospace;
@@ -31,35 +31,35 @@
             stroke: #2d326e; 
         }
         .footer, .form-submit {
-            text-align: center; /* Centraliza o conteúdo do rodapé */
+            text-align: center; /* Center footer content */
         }
     </style>
 </head>
 <body>
     <header class="header">
         <text id="titulo">
-            Desigualdade Salarial Entre Gêneros
+            Gender Wage Gap
         </text>
         <a href="https://github.com/giovannacbs/salarios/" id="saiba_mais">
-            Saiba mais sobre o projeto
+            Learn more about the project
         </a>
-        <a href="/dados" id="saiba_mais">Veja mais dados</a>
+        <a href="/dados" id="saiba_mais">See more data</a>
     </header>
     <div class="result">    
         <div class="resultados">
-            <p>Valor estimado caso homem:</p>
+            <p>Estimated value if male:</p>
             <p id="sal_hom">R$<span id="h" class="counter">{{ salario_homem }}</span></p>
             <br/>
-            <p>Valor estimado caso mulher:</p> 
+            <p>Estimated value if female:</p> 
             <p id="sal_mul">R$<span id="m" class="counter">{{ salario_mulher }}</span></p>
             <br/>
-            <p>Diferença de <span class="counter">{{ percentual }}</span>%</p> 
+            <p>Difference of <span class="counter">{{ percentual }}</span>%</p> 
         </div>
         <div id="chart"></div>
         <script>
             const data = [
-                {category: 'Homem', value: {{ salario_homem }}}, 
-                {category: 'Mulher', value: {{ salario_mulher }}}
+                {category: 'Man', value: {{ salario_homem }}}, 
+                {category: 'Woman', value: {{ salario_mulher }}}
             ];
         
             const width = window.innerWidth * 0.5;
@@ -83,8 +83,8 @@
             y.domain([0, d3.max(data, d => d.value)]);
         
             const formatCurrency = d3.formatLocale({
-                decimal: ",",
-                thousands: ".",
+                decimal: ".",
+                thousands: ",",
                 grouping: [3],
                 currency: ["R$", ""]}).format("$,.2f");
                 
@@ -101,7 +101,7 @@
              .attr("y", 6)
              .attr("dy", "0.71em")
              .attr("text-anchor", "end")
-             .text("Valor");
+             .text("Value");
         
             g.selectAll(".bar")
             .data(data)
@@ -111,7 +111,7 @@
             .attr("width", x.bandwidth())
             .attr("y", chartHeight)
             .attr("height", 0)
-            .style("fill", d => d.category === "Homem" ? "#4f69e1" : "#8B98F3")
+            .style("fill", d => d.category === "Man" ? "#4f69e1" : "#8B98F3")
             .transition()
             .duration(2000)
             .attr("y", d => y(d.value))
@@ -119,10 +119,10 @@
         </script>
     </div>
     <div class="footer">
-        Este modelo aplica regressão linear ao logaritmo do salário-hora, usando dados dos quatro trimestres de 2023, separados por gênero, da PNAD Contínua. A saída exibida representa o salário total, calculado multiplicando o salário estimado por hora pelas horas trabalhadas fornecidas pelo usuário. Cálculos, modelos e coeficientes obtidos estão disponíveis nesse <a href="https://github.com/giovannacbs/salarios/blob/main/Regressao%20Salario-Hora.py">código</a>. 
+        This model applies linear regression to the logarithm of hourly wages, using data from the four quarters of 2023, separated by gender, from PNAD Continua. The displayed output represents the total salary, calculated by multiplying the estimated hourly wage by the hours worked provided by the user. Calculations, models, and coefficients obtained are available in this <a href="https://github.com/giovannacbs/salarios/blob/main/Regressao%20Salario-Hora.py">code</a>. 
     </div>
     <div class="footer">
-        <a href="/" class="form-submit">Voltar</a>
+        <a href="/en" class="form-submit">Back</a>
     </div>
 </body>
 </html>
