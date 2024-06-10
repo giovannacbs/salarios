@@ -1,76 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Girls just wanna have equal pay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
+    <title>Desigualdade Salarial entre Gêneros 2024</title>
 </head>
-<header class="header">
-    <text id="titulo">
-    Desigualdade Salarial Entre Gêneros
-    </text>
-    <a href="/en" id="saiba_mais">English</a>
-    <a href=https://github.com/giovannacbs/salarios/ id="saiba_mais">
-        Saiba mais sobre o projeto
-    </a>
-    <a href="/dados" id="saiba_mais">Veja mais dados</a>
-</header>
 <body>
+    <div class="header">
+        <div id="titulo_dados">Desigualdade Salarial Entre Gêneros</div>
+    </div>
     <div class="content-wrapper">
-        <div class="main-column">
-            <img class="imagem_home" src="https://raw.githubusercontent.com/giovannacbs/salarios/main/static/home.png">
-            <div class="home-text"> 
-                 <text id="sera">
-                    Será que mulher <br>
-                    realmente ganha menos?
-                 </text>
-                <h2 id="entre">Selecione as variáveis idade, raça/cor, nível máximo de educação, região que reside e horas trabalhadas semanais e confira a estimativa do salário médio para homens e mulheres.</h2>
+        <div class="content">
+            <div id="oque">O que mostram <br> os dados?</div>
+            <h1 id="panorama">Panorama da mulher no mercado de trabalho no Brasil</h1>
+            <p class="spacing">A desigualdade salarial entre <span id="homem">homens</span> e <span id="mulher">mulheres</span> é uma realidade persistente por todo o Brasil, porém em magnitudes diferentes. Neste artigo vamos ver as variações dessa disparidade por <strong>estado, nível educacional, estado civil, área de atuação, cor e raça</strong>.</p>
+            <p>Antes de tudo, vamos ver como o mercado de trabalho se comporta no Brasil, qual a <strong>participação</strong> da <span id="mulher">mulher</span> no mercado de trabalho e quantos porcento de todas elas estão inseridas no mercado.</p>
+            <div class="flourish-embed" data-src="story/2397581"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+            <p>A primeira diferença que vamos ver é na desigualdade de salários entre os <strong>estados</strong>: nos lugares onde o salário médio é mais baixo - clique nos estados no mapa para ver - a diferença nos salários não é tão gritante quanto nos estados onde o salário médio é mais alto.</p>
+            <div class="flourish-embed flourish-map" data-src="visualisation/18082378">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
             </div>
+            <p class="spacing">Por exemplo, o <strong>Distrito Federal</strong>, cuja média de salário ultrapassa R$4.900, <span id="homem">homens</span> ganham <strong>37%</strong> a mais que as <span id="mulher">mulheres</span> no salário. Por sua vez, no <strong>Amapá</strong>, onde o salário médio é perto de R$2.600, os <span id="homem">homens</span> ganham 5% a menos que as <span id="mulher">mulheres</span>.</p>
+            <p class="spacing">Quando comparamos a disparidade entre as <strong>raças e cores</strong>, novamente vemos o fenômeno de quanto maior a renda média, maior a desigualdade entre o que <span id="homem">homens</span> e <span id="mulher">mulheres</span> recebem e vice-versa.</p>
+            <div class="flourish-embed flourish-scatter" data-src="visualisation/18103117">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+            <p>O salário médio para os <strong>indígenas</strong> é o menor dentre todas as raças - cerca de R$2.020 - e a diferença entre os salários médios entre um <span id="homem">homem</span> e uma <span id="mulher">mulher</span> <strong>indígena</strong> no Brasil é menor: 0,1%. Mas quando fazemos a mesma comparação para os <strong>amarelos</strong>, essa diferença fica em 41%.</p>
+            <p class="spacing">Ao fazermos o mesmo tipo de análise abrindo por <strong>níveis de educação</strong>, nos deparamos com a mesma coisa: níveis mais altos apresentam maior desigualdade, uma vez que níveis menores recebem salários médios mais perto do salário mínimo.</p>            
+            <div class="flourish-embed flourish-slope" data-src="visualisation/18275920"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
         </div>
-        <div class="forms">
-            <form action="/resultado" method="get" class="form-container">
-                <div class="form-group">
-                    <label for="idade" class="form-label">Idade</label>
-                    <input type="number" name="idade" id="idade" class="form-input" min="15" max="65" required>
-                </div>
-                <div class="form-group">
-                    <label for="regiao" class="form-label">Região</label>
-                    <select name="regiao" id="regiao" class="form-select" required>
-                        <option value="" selected disabled>Selecione a região...</option>                    <option value="Centro-Oeste">Centro-Oeste</option>
-                        <option value="Nordeste">Nordeste</option>
-                        <option value="Norte">Norte</option>
-                        <option value="Sul">Sul</option>
-                        <option value="Sudeste">Sudeste</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="educ" class="form-label">Nível mais alto de educação</label>
-                    <select name="educ" id="educ" class="form-select" required>
-                        <option value="" selected disabled>Selecionar educação...</option>
-                        <option value="Ensino Fundamental">Ensino Fundamental</option>
-                        <option value="Ensino Médio">Ensino Médio</option>
-                        <option value="Ensino Superior">Ensino Superior</option>
-                        <option value="Especialização de nível superior">Especialização de Nível Superior</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="raca" class="form-label">Raça/Cor</label>
-                    <select name="raca" id="raca" class="form-select" required>
-                        <option value="" selected disabled>Selecionar raça/cor...</option>
-                        <option value="branca">Branca</option>
-                        <option value="nao branca">Não Branca</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="hrs_trab" class="form-label">Horas trabalhadas por semana</label>
-                    <input type="number" name="hrs_trab" id="hrs_trab" class="form-input" min="25" max="80" required>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Calcular Salário" class="form-submit">
-                </div>
-            </form>
-        </div>    
+    </div>
+    <div class="footer">
+        <a id="saiba_mais" href="https://github.com/giovannacbs/salarios/">Saiba Mais</a>
     </div>
 </body>
 </html>
-
