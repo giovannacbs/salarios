@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Desigualdade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
+    <title>Desigualdade Salarial entre Gêneros 2024</title>
 </head>
-<header class="header">
-    <text id="titulo">
-    Desigualdade Salarial Entre Gêneros
-    </text>
-    <a href=https://github.com/giovannacbs/salarios/ id="saiba_mais">
-        Saiba mais sobre o projeto
-    </a>
-    <a href="/" id="saiba_mais">Página Inicial</a>
-</header>
 <body>
-    <div class = graficos>
-        <div class="horizontal">
-            <div class="titulo_graf_h">
-                <h3 id="r">Médias salariais por raça/cor</h3>
-                <br>
-                <h3 id="e">Médias salariais por nível de educação</h3>
+    <div class="header">
+        <div id="titulo_dados">Desigualdade Salarial Entre Gêneros</div>
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div id="oque">O que mostram <br> os dados?</div>
+            <h1 id="panorama">Panorama da mulher no mercado de trabalho no Brasil</h1>
+            <p class="spacing">A desigualdade salarial entre <span id="homem">homens</span> e <span id="mulher">mulheres</span> é uma realidade persistente por todo o Brasil, porém em magnitudes diferentes. Neste artigo vamos ver as variações dessa disparidade por <strong>estado, nível educacional, estado civil, área de atuação, cor e raça</strong>.</p>
+            <p>Antes de tudo, vamos ver como o mercado de trabalho se comporta no Brasil, qual a <strong>participação</strong> da <span id="mulher">mulher</span> no mercado de trabalho e quantos porcento de todas elas estão inseridas no mercado.</p>
+            <div class="flourish-embed" data-src="story/2397581"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+            <p>A primeira diferença que vamos ver é na desigualdade de salários entre os <strong>estados</strong>: nos lugares onde o salário médio é mais baixo - clique nos estados no mapa para ver - a diferença nos salários não é tão gritante quanto nos estados onde o salário médio é mais alto.</p>
+            <div class="flourish-embed flourish-map" data-src="visualisation/18082378">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
             </div>
-            <div class ="graf_h">    
-                <div style="min-height: 30%;min-width: 30%" id="graf_raca"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/nIPtW/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/nIPtW/full.png" alt="" /></noscript></div>    
-                <div style="min-height: 30%;min-width: 30%;" id="graf_educ"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/4rOZF/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/4rOZF/full.png" alt="" /></noscript></div>
+            <p class="spacing">Por exemplo, o <strong>Distrito Federal</strong>, cuja média de salário ultrapassa R$4.900, <span id="homem">homens</span> ganham <strong>37%</strong> a mais que as <span id="mulher">mulheres</span> no salário. Por sua vez, no <strong>Amapá</strong>, onde o salário médio é perto de R$2.600, os <span id="homem">homens</span> ganham 5% a menos que as <span id="mulher">mulheres</span>.</p>
+            <p class="spacing">Quando comparamos a disparidade entre as <strong>raças e cores</strong>, novamente vemos o fenômeno de quanto maior a renda média, maior a desigualdade entre o que <span id="homem">homens</span> e <span id="mulher">mulheres</span> recebem e vice-versa.</p>
+            <div class="flourish-embed flourish-scatter" data-src="visualisation/18103117">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
             </div>
+            <p>O salário médio para os <strong>indígenas</strong> é o menor dentre todas as raças - cerca de R$2.020 - e a diferença entre os salários médios entre um <span id="homem">homem</span> e uma <span id="mulher">mulher</span> <strong>indígena</strong> no Brasil é menor: 0,1%. Mas quando fazemos a mesma comparação para os <strong>amarelos</strong>, essa diferença fica em 41%.</p>
+            <p class="spacing">Ao fazermos o mesmo tipo de análise abrindo por <strong>níveis de educação</strong>, nos deparamos com a mesma coisa: níveis mais altos apresentam maior desigualdade, uma vez que níveis menores recebem salários médios mais perto do salário mínimo.</p>            
+            <div class="flourish-embed flourish-slope" data-src="visualisation/18275920"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
         </div>
-            <div class="graf3">
-                <h3 id="u">Médias salariais por UFs</h3>
-                <div style="max-height:60%;max-width: 40%;" id = graf_uf><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/SgScN/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/SgScN/full.png" alt="" /></noscript></div>
-            </div>
+    </div>
+    <div class="footer">
+        <a id="saiba_mais" href="https://github.com/giovannacbs/salarios/">Saiba Mais</a>
     </div>
 </body>
 </html>
