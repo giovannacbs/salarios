@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=WindSong&family=Pixelify+Sans:wght@400..700&family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #EDF2F7;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header {
+    font-family: "Oxanium", monospace;
+    color: #e0e6ff;
+    background-color: #2d326e;
+    font-weight: 100;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+#titulo_dados {
+    font-family: "Abril Fatface", serif;
+    font-size: x-large;
+    color: #e0e6ff;
+}
+
+a#saiba_mais {
+    font-size: large;
+    color: #e0e6ff;
+    text-decoration: underline;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.main-column {
+    text-align: left;
+    width: 55%;
+}
+
+.content {
+    font-family: "Montserrat", sans-serif;
+    color: #2d326e;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+    width: 55%;
+}
+
+h1, h2, h3 {
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    color: rgb(106, 108, 112);
+    width: 70%;
+}
+
+#homem, #mulher {
+    font-weight: bold;
+}
+
+#homem {
+    color: #007a94;
+}
+
+#mulher {
+    color: #c4276d;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+.spacing {
+    margin-top: 40px;
+}
+
+#oque {
+    font-family: "Abril Fatface", serif;
+    font-size: 4rem;
+}
+
+.footer {
+    font-family: "Abril Fatface", serif;
+    color: #e0e6ff;
+    font-size: 1rem;
+    background-color: #2d326e;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .header, .footer {
+        padding: 10px 5%;
+        height: auto;
+    }
+
+    .main-column, .content {
+        width: 93%;
+    }
+
+    .content-wrapper {
+        padding-top: 10px;
+    }
+
+    .form-input, .form-select {
+        width: 100%;
+    }
+
+    #sera {
+        font-size: 2rem;
+    }
+}
